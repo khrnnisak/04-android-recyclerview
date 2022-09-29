@@ -2,16 +2,11 @@ package jti.nisak.a04androidrecyclerview;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.reset_action) {
+            mWordList.clear();
+            for (int i = 0; i < 20; i++){
+                mWordList.addLast("Word " + i);
+            }
+            Objects.requireNonNull(mRecyclerView.getAdapter()).notifyDataSetChanged();
             return true;
         }
 
