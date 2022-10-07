@@ -2,9 +2,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="jti.nisak.a04androidrecyclerview.MainActivity">
-    <item
-        android:id="@+id/reset_action"
-        android:orderInCategory="100"
-        android:title="@string/reset_option"
-        app:showAsAction="never" />
+
 </menu>
